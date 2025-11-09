@@ -1,0 +1,64 @@
+﻿@model SistemaGestionClientes.Models.Cliente
+
+@{
+    ViewBag.Title = "Eliminar Cliente";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-danger">Eliminar Cliente</h2>
+        @Html.ActionLink("← Volver a la lista", "Index", null, new { @class = "back-link" })
+    </div>
+
+    <div class="form-container">
+        <div class="alert alert-warning border-warning">
+            <h5 class="alert-heading">¿Está seguro que desea eliminar este cliente?</h5>
+            <p class="mb-0">Esta acción no se puede deshacer.</p>
+        </div>
+
+        <div class="form-group-elegant">
+            <label class="form-label-elegant">Nombre Completo</label>
+            <div class="form-control-elegant bg-light">
+                @Html.DisplayFor(model => model.NombreCompleto)
+            </div>
+        </div>
+
+        <div class="form-group-elegant">
+            <label class="form-label-elegant">Teléfono</label>
+            <div class="form-control-elegant bg-light">
+                @Html.DisplayFor(model => model.Telefono)
+            </div>
+        </div>
+
+        <div class="form-group-elegant">
+            <label class="form-label-elegant">Correo Electrónico</label>
+            <div class="form-control-elegant bg-light">
+                @Html.DisplayFor(model => model.Correo)
+            </div>
+        </div>
+
+        <div class="form-group-elegant">
+            <label class="form-label-elegant">Vehículo</label>
+            <div class="form-control-elegant bg-light">
+                @Html.DisplayFor(model => model.Vehiculo)
+            </div>
+        </div>
+
+       
+        <div class="form-group-elegant">
+            <label class="form-label-elegant">Tipo de Vehículo</label>
+            <div class="form-control-elegant bg-light">
+                @Html.DisplayFor(model => model.TipoVehiculo)
+            </div>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions">
+                <input type="submit" value="Eliminar Definitivamente" class="btn btn-danger-elegant me-2" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-outline-elegant" })
+            </div>
+        }
+    </div>
+</div>

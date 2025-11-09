@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Guía de Uso - Super Repuestos";
+}
+
+<div class="container mt-5">
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4">🏁 SUPER REPUESTOS</h1>
+        <p class="lead">Sistema de Gestion de Clientes - Guia de Uso</p>
+    </div>
+
+    <!-- Descripción del Sistema -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="chart-container text-center">
+                <h3 class="chart-title">¿Qué es este sistema?</h3>
+                <p class="mb-0">
+                    Este es un Sistema web desarrollado para la gestión profesional de clientes del taller automotriz <strong>Super Repuestos</strong>.
+                    El cual permite registrar, consultar, editar y eliminar información de clientes de manera eficiente.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pasos de Uso -->
+    <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="stat-card text-center h-100">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Gestionar Clientes</div>
+                <p class="mt-3 small">
+                    Ve a la sección <strong>"Clientes"</strong> en el menú superior para ver todos los clientes registrados,
+                    crear nuevos, editar información o eliminar registros.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="stat-card text-center h-100">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Buscar y Filtrar</div>
+                <p class="mt-3 small">
+                    Usa la barra de búsqueda en la parte superior de la lista para encontrar clientes específicos
+                    por nombre, teléfono, correo o vehículo.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="stat-card text-center h-100">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Ver Estadísticas</div>
+                <p class="mt-3 small">
+                    En la misma página de clientes encontrarás estadísticas automáticas: total de clientes,
+                    registros del mes y tipos de vehículo más comunes.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Acciones Rápidas -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="chart-container">
+                <h3 class="chart-title text-center"> Acciones Rápidas</h3>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    @Html.ActionLink("Ir a Gestión de Clientes", "Index", "Cliente", null, new { @class = "btn btn-elegant" })
+                    @Html.ActionLink("Crear Nuevo Cliente", "Create", "Cliente", null, new { @class = "btn btn-outline-elegant" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Información de Tipos de Vehículo -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-container">
+                <h4 class="chart-title"> Tipos de Vehículo Soportados</h4>
+                <ul class="list-unstyled">
+                    <li> <strong>Sedan</strong> - Automóvil de 4 puertas</li>
+                    <li> <strong>Coupe</strong> - Automóvil deportivo 2 puertas</li>
+                    <li> <strong>Deportivo</strong> - Vehículos de alto rendimiento</li>
+                    <li> <strong>Hatchback</strong> - Automóvil compacto 3-5 puertas</li>
+                    <li> <strong>SUV</strong> - Vehículo utilitario deportivo</li>
+                    <li> <strong>PickUp</strong> - Camioneta de carga</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-container">
+                <h4 class="chart-title">📞 Soporte Tecnico</h4>
+                <p><strong>Empresa:</strong> UDB</p>
+                <p><strong>Desarrollador:</strong> Jose Alexander Mejia Lopez</p>
+                <p><strong>Tecnologías:</strong> ASP.NET MVC, SQL Server, Bootstrap</p>
+                <div class="mt-3">
+                    <small class="text-muted">Contacto en caso que el sistema presente una falla imprevista o poco comun.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,507 @@
+﻿/* ===== RESET Y CONFIGURACIÓN GENERAL ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.body-content {
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+/* ===== NAVBAR PERSONALIZADO ===== */
+.navbar-custom {
+    background: linear-gradient(135deg, #000000 0%, #2a0c0c 100%) !important;
+    border-bottom: 3px solid #ff0000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #ff0000 !important;
+    font-size: 1.5rem;
+}
+
+.racing-flag {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background: linear-gradient(45deg, #000000 25%, #ffffff 25%, #ffffff 50%, #000000 50%, #000000 75%, #ffffff 75%);
+    margin-right: 10px;
+    border: 1px solid #ff0000;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #ff0000 !important;
+    }
+
+/* ===== BOTONES ELEGANTES ===== */
+.btn-elegant {
+    background-color: #2c3e50;
+    border: 1px solid #2c3e50;
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn-elegant:hover {
+        background-color: #34495e;
+        border-color: #34495e;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        text-decoration: none;
+    }
+
+.btn-outline-elegant {
+    background-color: transparent;
+    border: 1px solid #2c3e50;
+    color: #2c3e50;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn-outline-elegant:hover {
+        background-color: #2c3e50;
+        color: white;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        text-decoration: none;
+    }
+
+.btn-danger-elegant {
+    background-color: transparent;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn-danger-elegant:hover {
+        background-color: #e74c3c;
+        color: white;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 6px rgba(231, 76, 60, 0.2);
+        text-decoration: none;
+    }
+
+/* ===== TABLA ELEGANTE ===== */
+.table-elegant {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e9ecef;
+    margin-bottom: 20px;
+}
+
+    .table-elegant thead th {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border: none;
+        font-weight: 600;
+        color: #2c3e50;
+        padding: 16px 15px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .table-elegant tbody td {
+        padding: 14px 15px;
+        border-color: #f8f9fa;
+        color: #495057;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .table-elegant tbody tr:nth-child(even) {
+        background-color: #fdfdfd;
+    }
+
+    .table-elegant tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    .table-elegant tbody tr:hover td {
+        background-color: #f8f9fa;
+        transform: scale(1.002);
+    }
+
+    .table-elegant tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+.table-responsive {
+    border-radius: 10px;
+}
+
+/* ===== CONTADOR ELEGANTE ===== */
+.contador-elegante {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 500;
+    color: #495057;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+    .contador-elegante strong {
+        color: #2c3e50;
+        font-weight: 600;
+    }
+
+    .contador-elegante span {
+        background-color: #2c3e50;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+        margin-left: 8px;
+    }
+
+/* ===== FORMULARIOS ELEGANTES ===== */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e9ecef;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group-elegant {
+    margin-bottom: 1.5rem;
+}
+
+.form-label-elegant {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-control-elegant {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+    .form-control-elegant:focus {
+        border-color: #2c3e50;
+        box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.1);
+        background-color: #ffffff;
+    }
+
+.text-danger {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.form-actions {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #6c757d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+    .back-link:hover {
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+/* ===== FOOTER ELEGANTE ===== */
+.footer-elegante {
+    background: linear-gradient(135deg, #000000 0%, #2a0c0c 100%);
+    border-top: 3px solid #ff0000;
+    color: #ffffff;
+    padding: 40px 0 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.footer-logo {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background: linear-gradient(45deg, #000000 25%, #ffffff 25%, #ffffff 50%, #000000 50%, #000000 75%, #ffffff 75%);
+    margin-right: 12px;
+    border: 1px solid #ff0000;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+    .footer-info p {
+        margin: 0;
+        color: #cccccc;
+        font-size: 1rem;
+    }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+    .footer-bottom p {
+        margin: 0;
+        color: #999999;
+        font-size: 0.9rem;
+    }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-elegante {
+        padding: 30px 0 15px;
+    }
+
+    .footer-brand {
+        font-size: 1.1rem;
+    }
+
+    .footer-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== SOLUCIÓN ESPECÍFICA PARA CLIENTES ===== */
+.clientes-container {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+}
+
+.clientes-content {
+    flex: 1;
+}
+/* ===== DASHBOARD Y ESTADÍSTICAS ===== */
+.dashboard-container {
+    min-height: calc(100vh - 200px);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.stat-trend {
+    font-size: 0.8rem;
+    margin-top: 8px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.trend-positive {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.trend-neutral {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+.chart-container {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.chart-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.dashboard-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+/* Tarjetas de colores para diferentes métricas */
+.stat-card-total {
+    border-left: 4px solid #2c3e50;
+}
+
+.stat-card-month {
+    border-left: 4px solid #28a745;
+}
+
+.stat-card-week {
+    border-left: 4px solid #17a2b8;
+}
+
+.stat-card-trend {
+    border-left: 4px solid #ffc107;
+}
+
+/* Grid para gráficos */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Tabla de rankings */
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .ranking-table th {
+        background-color: #f8f9fa;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+        color: #2c3e50;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .ranking-table td {
+        padding: 12px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .ranking-table tr:hover {
+        background-color: #f8f9fa;
+    }
+
+.rank-badge {
+    background-color: #2c3e50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Responsive para dashboard */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        padding: 15px;
+    }
+}

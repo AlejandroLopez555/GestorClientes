@@ -1,0 +1,67 @@
+﻿@model SistemaGestionClientes.Models.Cliente
+
+@{
+    ViewBag.Title = "Editar Cliente";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Editar Cliente</h2>
+        @Html.ActionLink("← Volver a la lista", "Index", null, new { @class = "back-link" })
+    </div>
+
+    <div class="form-container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.ClienteID)
+
+            <div class="form-group-elegant">
+                @Html.LabelFor(model => model.NombreCompleto, new { @class = "form-label-elegant" })
+                @Html.TextBoxFor(model => model.NombreCompleto, new { @class = "form-control form-control-elegant" })
+                @Html.ValidationMessageFor(model => model.NombreCompleto, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-elegant">
+                @Html.LabelFor(model => model.Telefono, new { @class = "form-label-elegant" })
+                @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control form-control-elegant" })
+                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-elegant">
+                @Html.LabelFor(model => model.Correo, new { @class = "form-label-elegant" })
+                @Html.TextBoxFor(model => model.Correo, new { @class = "form-control form-control-elegant" })
+                @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-elegant">
+                @Html.LabelFor(model => model.Vehiculo, new { @class = "form-label-elegant" })
+                @Html.TextBoxFor(model => model.Vehiculo, new { @class = "form-control form-control-elegant" })
+                @Html.ValidationMessageFor(model => model.Vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group-elegant">
+                @Html.LabelFor(model => model.TipoVehiculo, new { @class = "form-label-elegant" })
+                @Html.DropDownListFor(model => model.TipoVehiculo,
+                    new SelectList(SistemaGestionClientes.Models.TiposVehiculo.ObtenerTodos()),
+                    "Seleccione el tipo de vehículo",
+                    new { @class = "form-control form-control-elegant" })
+                @Html.ValidationMessageFor(model => model.TipoVehiculo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-elegant">
+                @Html.LabelFor(model => model.FechaRegistro, new { @class = "form-label-elegant" })
+                @Html.TextBoxFor(model => model.FechaRegistro, "{0:yyyy-MM-dd}", new { @class = "form-control form-control-elegant", @readonly = "readonly" })
+                <small class="text-muted">Fecha de registro (no editable)</small>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" value="Guardar Cambios" class="btn btn-elegant me-2" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-outline-elegant" })
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

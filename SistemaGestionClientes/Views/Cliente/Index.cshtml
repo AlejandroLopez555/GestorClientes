@@ -1,0 +1,133 @@
+﻿@model IEnumerable<SistemaGestionClientes.Models.Cliente>
+
+@{
+    ViewBag.Title = "Gestión de Clientes";
+}
+
+<div class="container">
+    <h2>Gestión de Clientes</h2>
+
+    <!--Barra de busqueda-->
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar clientes...">
+        </div>
+        <div class="col-md-6 text-end">
+            @Html.ActionLink("Nuevo Cliente", "Create", null, new { @class = "btn btn-elegant" })
+        </div>
+    </div>
+
+    <!-- GridView -->
+    <div class="table-responsive">
+        <table class="table table-elegant" id="clientesTable">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.NombreCompleto)</th>
+                    <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+                    <th>@Html.DisplayNameFor(model => model.Correo)</th>
+                    <th>@Html.DisplayNameFor(model => model.Vehiculo)</th>
+                    <th>@Html.DisplayNameFor(model => model.TipoVehiculo)</th>
+                    <th>@Html.DisplayNameFor(model => model.FechaRegistro)</th>
+                    <th style="width: 200px;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="fw-medium">@Html.DisplayFor(modelItem => item.NombreCompleto)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                        <td>
+                            <span class="text-primary">@Html.DisplayFor(modelItem => item.Correo)</span>
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Vehiculo)</td>
+                        <td>
+                            <span class="badge bg-info text-dark">@Html.DisplayFor(modelItem => item.TipoVehiculo)</span>
+                        </td>
+                        <td>
+                            <small class="text-muted">@item.FechaRegistro.ToString("dd/MM/yyyy")</small>
+                        </td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                @Html.ActionLink("Detalles", "Details", new { id = item.ClienteID }, new { @class = "btn btn-outline-elegant" })
+                                @Html.ActionLink("Editar", "Edit", new { id = item.ClienteID }, new { @class = "btn btn-outline-elegant" })
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.ClienteID }, new { @class = "btn btn-danger-elegant" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!--Contador de registros-->
+    <div class="mt-3">
+        <strong>Total de clientes: </strong><span id="totalCount">@Model.Count()</span>
+    </div>
+
+    <!-- Estadisticas-->
+    <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+            <div class="stat-card text-center">
+                <div class="stat-number">@Model.Count()</div>
+                <div class="stat-label">Total General</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="stat-card text-center">
+                <div class="stat-number">@(Model?.Count(c => c.FechaRegistro.Month == DateTime.Now.Month) ?? 0)</div>
+                <div class="stat-label">Este Mes</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="stat-card text-center">
+                <div class="stat-number">@Model.Count(c => c.FechaRegistro >= DateTime.Now.AddDays(-7))</div>
+                <div class="stat-label">Última Semana</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tipos de Vehiculo mas comuness-->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="chart-container">
+                <h4 class="chart-title">Tipos de Vehículo Más Comunes</h4>
+                <div class="row">
+                    @{
+                        var tiposVehiculo = Model.GroupBy(c => c.TipoVehiculo)
+                                               .Select(g => new { Tipo = g.Key, Count = g.Count() })
+                                               .OrderByDescending(x => x.Count)
+                                               .Take(4);
+                    }
+                    @foreach (var tipo in tiposVehiculo)
+                    {
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card text-center">
+                                <div class="stat-number">@tipo.Count</div>
+                                <div class="stat-label">@tipo.Tipo</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Busqueda en tiempo real
+        $(document).ready(function () {
+            $('#searchInput').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $('#clientesTable tbody tr').filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+
+                // Actualizar contador
+                var visibleRows = $('#clientesTable tbody tr:visible').length;
+                $('#totalCount').text(visibleRows);
+            });
+        });
+    </script>
+}

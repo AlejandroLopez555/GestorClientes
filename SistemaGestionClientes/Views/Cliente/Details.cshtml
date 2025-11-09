@@ -1,0 +1,71 @@
+﻿@model SistemaGestionClientes.Models.Cliente
+
+@{
+    ViewBag.Title = "Detalles del Cliente";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Detalles del Cliente</h2>
+        @Html.ActionLink("← Volver a la lista", "Index", null, new { @class = "back-link" })
+    </div>
+
+    <div class="form-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group-elegant">
+                    <label class="form-label-elegant">Nombre Completo</label>
+                    <div class="form-control-elegant bg-light">
+                        @Html.DisplayFor(model => model.NombreCompleto)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group-elegant">
+                    <label class="form-label-elegant">Teléfono</label>
+                    <div class="form-control-elegant bg-light">
+                        @Html.DisplayFor(model => model.Telefono)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group-elegant">
+                    <label class="form-label-elegant">Correo Electrónico</label>
+                    <div class="form-control-elegant bg-light">
+                        @Html.DisplayFor(model => model.Correo)
+                    </div>
+                </div>
+                <div class="form-group-elegant">
+                    <label class="form-label-elegant">Tipo de Vehículo</label>
+                    <div class="form-control-elegant bg-light">
+                        <span class="badge bg-primary">@Html.DisplayFor(model => model.TipoVehiculo)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group-elegant">
+                    <label class="form-label-elegant">Vehículo</label>
+                    <div class="form-control-elegant bg-light">
+                        <span class="badge bg-light text-dark border">@Html.DisplayFor(model => model.Vehiculo)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group-elegant">
+            <label class="form-label-elegant">Fecha de Registro</label>
+            <div class="form-control-elegant bg-light">
+                @Model.FechaRegistro.ToString("dd/MM/yyyy HH:mm")
+            </div>
+        </div>
+
+        <div class="form-actions">
+            @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteID }, new { @class = "btn btn-elegant me-2" })
+            @Html.ActionLink("Eliminar", "Delete", new { id = Model.ClienteID }, new { @class = "btn btn-danger-elegant me-2" })
+            @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-outline-elegant" })
+        </div>
+    </div>
+</div>
